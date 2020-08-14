@@ -7,5 +7,9 @@ public class Materia {
     public double notaInicial;
     public double notaFinal;
     public double notaTotal;
+    public double notaExamen;
+    public double notaDeberes;
+    public double notaLecciones;
+    public double notaTalleres;
     
 }

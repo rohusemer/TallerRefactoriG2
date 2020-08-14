@@ -19,12 +19,12 @@ public class Estudiante extends Persona{
     }
     
     //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
-    public double CalcularNotaInicial(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+    public double CalcularNotaInicial(Paralelo p){
         double notaInicial=0;
         for(Paralelo par:paralelos){
             if(p.equals(par)){
-                double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
-                double notaPractico=(ntalleres)*0.20;
+                double notaTeorico=(p.getMateria().notaExamen + p.getMateria().notaDeberes + p.getMateria().notaLecciones)*0.80;
+                double notaPractico=(p.getMateria().notaTalleres)*0.20;
                 notaInicial=notaTeorico+notaPractico;
             }
         }
@@ -33,12 +33,12 @@ public class Estudiante extends Persona{
     
     //Calcula y devuelve la nota final contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
     
-    public double CalcularNotaFinal(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
+    public double CalcularNotaFinal(Paralelo p){
         double notaFinal=0;
         for(Paralelo par:paralelos){
             if(p.equals(par)){
-                double notaTeorico=(nexamen+ndeberes+nlecciones)*0.80;
-                double notaPractico=(ntalleres)*0.20;
+                double notaTeorico=(p.getMateria().notaExamen + p.getMateria().notaDeberes + p.getMateria().notaLecciones)*0.80;
+                double notaPractico=(p.getMateria().notaTalleres)*0.20;
                 notaFinal=notaTeorico+notaPractico;
             }
         }
